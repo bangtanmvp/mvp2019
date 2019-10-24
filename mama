@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+</head>
+<body>
+    <h3>Sign out from SNS</h3>
+    <p> Sign out via these links or doing it manually on the SNS.</p>
+
+    <div><a href="https://accounts.kakao.com/logout?continue=https://bangtanmvp.github.io/mvp2019/mama.html">Sign out from Kakao</a></div>
+
+    <div><a href="https://nid.naver.com/nidlogin.logout?returl=https://bangtanmvp.github.io/mvp2019/mama.html">Sign out from Naver</a></div>
+
+    <div><a href="https://www.tumblr.com/logout" target="_blank">Sign out from Tumblr (in new tab)</a></div>
+    
+    <div><a href="https://www.twitter.com/logout?returl=https://bangtanmvp.github.io/mvp2019/mama.html">Sign out from Twitter</a><div/>
+        
+    <br>
+
+    <hr>
+    <h3>Mnet Sign In/Sign Out</h3>
+
+       <p>Make sure all your accounts are already made, do not use these links on "New" Mnet Accounts.</p>
+
+    <div>
+    <div>
+       
+
+        <a href="https://www.mwave.me/en/signin?redirectUrl=https://bangtanmvp.github.io/mvp2019/mama.html">Sign in</a>
+
+    </div>
+
+    <div>
+
+        <a href="https://www.mwave.me/signout" target="_blank">Sign out (in new tab)</a>
+
+    </div>
+        <br>
+
+       
+
+        
+
+   <hr>  
+
+        <br>
+        <div>
+
+        <button id="vote">Vote MAMA</button>
+
+    </div>
+    <script>
+        document.getElementById("vote").addEventListener("click", function() {
+            const form = document.createElement("form");
+            form.action = "http://mama.mwave.me/en/vote";
+            form.method = "post";
+            form.target = "_blank";
+            
+            ["no_1=17", "no_2=53", "no_3=79", "no_4=0", "no_5=0", "no_6=30", "no_7=37", "no_8=43", "no_9=46", "no_10=56", "no_11=61", "no_12=63", "no_13=69", "no_14=74", "no_15=80", "no_16=85", "no_17=108", "no_18=147"]
+            .forEach((str) => {
+                const [key, value] = str.split("=");
+                const elm = document.createElement("input");
+                elm.type = "hidden";
+                elm.name = key;
+                elm.value = value;
+                form.appendChild(elm);
+            }, false);
+            document.body.appendChild(form);
+            form.submit();
+        }, false);
+    </script>
+       
+            
+</body>
+</html>
